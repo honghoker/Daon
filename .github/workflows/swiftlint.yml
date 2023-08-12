@@ -1,0 +1,18 @@
+name: auto pull request swiftLint
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: tuist/tuist-action@0.13.0
+        with:
+          command: 'build'
+          arguments: ''
