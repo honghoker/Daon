@@ -5,6 +5,18 @@ on:
     branches: [ develop ]
   pull_request:
     branches: [ develop ]
+    paths:
+      - Tuist/**
+      - Package.resolved
+      - Gemfile*
+      - Package.swift
+      - Project.swift
+      - Sources/**
+      - Templates/**
+      - Tests/**
+      - .package.resolved
+      - .github/workflows/tuist.yml
+
   workflow_dispatch:
 jobs:
   build:
