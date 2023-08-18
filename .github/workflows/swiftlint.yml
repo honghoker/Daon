@@ -1,22 +1,28 @@
-name: auto pull request swiftLint
+name: SwiftLint
 
 on:
-  push:
-    branches: [ develop ]
   pull_request:
-    branches: [ develop ]
-  workflow_dispatch:
+    paths:
+      - '.github/workflows/swiftlint.yml'
+      - '.swiftlint.yml'
+      - '**/*.swift'
+
 jobs:
-  build:
-    name: Build
-    runs-on: macos-latest
+  SwiftLint:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: tuist/tuist-action@0.13.0 # This action has an issue with tuist 3.1.0, so you have to use version 3.0.1: https://github.com/tuist/tuist-action/issues/6
+      - name: GitHub Action for SwiftLint
+        uses: norio-nomura/action-swiftlint@3.2.1
+      - name: GitHub Action for SwiftLint with --strict
+        uses: norio-nomura/action-swiftlint@3.2.1
         with:
-          command: 'fetch'
-          arguments: ''
-      - uses: tuist/tuist-action@0.13.0 # This action has an issue with tuist 3.1.0, so you have to use version 3.0.1: https://github.com/tuist/tuist-action/issues/6
-        with:
-          command: 'build'
-          arguments: ''
+          args: --strict
+      - name: GitHub Action for SwiftLint (Only files changed in the PR)
+        uses: norio-nomura/action-swiftlint@3.2.1
+        env:
+          DIFF_BASE: ${{ github.base_ref }}
+      - name: GitHub Action for SwiftLint (Different working directory)
+        uses: norio-nomura/action-swiftlint@3.2.1
+        env:
+          WORKING_DIRECTORY: Source
