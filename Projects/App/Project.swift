@@ -6,7 +6,14 @@ let project = Project.makeModule(
     platform: .iOS,
     product: .app,
     dependencies: [
-        .Project.Common
+        .SPM.FirebaseAnalytics,
+        .SPM.FirebaseAuth,
+        .SPM.FirebaseFirestore,
+        .SPM.FirebaseRemoteConfig,
+        .SPM.RxCocoa,
+        .SPM.RxSwift,
+        .SPM.SnapKit,
+        .Project.Common,
     ],
     resources: ["Resources/**"],
     infoPlist: .file(path: "Support/Info.plist")

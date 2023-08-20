@@ -5,7 +5,7 @@ public extension Project {
         name: String,
         platform: Platform = .iOS,
         product: Product,
-        organizationName: String = "Daon",
+        organizationName: String = "com.hongkim",
         packages: [Package] = [],
         deploymentTarget: DeploymentTarget? = .iOS(targetVersion: "16.0", devices: [.iphone]),
         dependencies: [TargetDependency] = [],
