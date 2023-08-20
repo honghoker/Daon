@@ -13,11 +13,15 @@ let dependencies = Dependencies(
     swiftPackageManager: [
         .remote(
             url: "https://github.com/SnapKit/SnapKit.git",
-            requirement: .revision("f222cbd") // 5.6.0
+            requirement: .upToNextMajor(from: "5.0.0")
         ),
         .remote(
             url: "https://github.com/onevcat/Kingfisher.git",
-            requirement: .revision("c75584a") // 7.9.0
+            requirement: .upToNextMajor(from: "7.0.0")
+        ),
+        .remote(
+            url: "https://github.com/firebase/firebase-ios-sdk",
+            requirement: .upToNextMajor(from: "10.0.0")
         )
     ],
     platforms: [.iOS]
