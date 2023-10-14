@@ -1,10 +1,3 @@
-//
-//  BaseViewController.swift
-//  CommonManifests
-//
-//  Created by 홍은표 on 2023/08/20.
-//
-
 import UIKit
 import RxSwift
 

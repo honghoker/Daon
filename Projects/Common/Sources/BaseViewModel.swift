@@ -1,11 +1,3 @@
-//
-//  BaseViewModel.swift
-//  Common
-//
-//  Created by 홍은표 on 2023/08/20.
-//  Copyright © 2023 com.hongkim. All rights reserved.
-//
-
 import Foundation
 import RxSwift
 

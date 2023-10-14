@@ -10,10 +10,7 @@ let project = Project.makeModule(
         .SPM.FirebaseAuth,
         .SPM.FirebaseFirestore,
         .SPM.FirebaseRemoteConfig,
-        .SPM.RxCocoa,
-        .SPM.RxSwift,
-        .SPM.SnapKit,
-        .Project.Common,
+        .Project.Feature
     ],
     resources: ["Resources/**"],
     infoPlist: .file(path: "Support/Info.plist")

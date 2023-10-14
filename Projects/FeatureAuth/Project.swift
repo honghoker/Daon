@@ -9,11 +9,10 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.makeModule(
-    name: "Common",
+    name: "Auth",
     product: .staticFramework,
     dependencies: [
         
     ],
-    sources: ["Sources/**"],
-    resources: ["Resources/**"]
+    sources: ["Scene/**"]
 )
